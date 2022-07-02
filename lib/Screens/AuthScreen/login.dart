@@ -1,4 +1,5 @@
 import 'package:auth_app/Provider/auth_provider.dart';
+import 'package:auth_app/Screens/AuthScreen/phone_auth.dart';
 import 'package:auth_app/Screens/AuthScreen/reset.dart';
 import 'package:auth_app/Screens/home.dart';
 import 'package:flutter/material.dart';
@@ -120,10 +121,22 @@ bool isLoading = false;
             },
           child: Container(
             color: Colors.blue,
+        
             padding: const EdgeInsets.all(10),
             child: const Text('Continue with facebook'),
           ),
-          )
+          ),
+        GestureDetector(
+          onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const PhoneAuth(),));
+          },
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.symmetric(vertical: 50),
+            color: Colors.amber,
+            child: const Text('Continue with phone number'),
+          ),
+        )
             ],
            )
           
